@@ -72,12 +72,12 @@ export const BALANCER_NETWORK_CONFIG: Record<Network, BalancerNetworkConfig> = {
         chainId: Network.KOVAN, //42
         addresses: {
             contracts: {
-                vault: '0x01cffd957088c2c8d589899Fe7456C2d8a8eE2B5',
-                multicall: '0x2cc8688C5f75E365aaEEb4ea8D6a480405A48D2A',
+                vault: '0x511175F8ed270572eb679513C95098F2B6dAe4F2',
+                multicall: '0xCa58c4fA30dce57Ac8226A7e00C105Ac58F51823',
             },
             tokens: {
                 wrappedNativeAsset:
-                    '0xa5b76a530a91A4C5BD1c89A6266419c800b4B2f6',
+                    '0x88daBb4E1eB9999d05e04bcd704C17442FA88D72',
             },
         },
         urls: {
