@@ -93,7 +93,7 @@ export const ADDRESSES = {
             symbol: 'WBTC',
         },
         WETH: {
-            address: '0xdFCeA9088c8A88A76FF74892C1457C17dfeef9C1',
+            address: '0x88dabb4e1eb9999d05e04bcd704c17442fa88d72',
             decimals: 18,
             symbol: 'WETH',
         },
