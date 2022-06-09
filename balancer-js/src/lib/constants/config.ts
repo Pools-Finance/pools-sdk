@@ -77,7 +77,7 @@ export const BALANCER_NETWORK_CONFIG: Record<Network, BalancerNetworkConfig> = {
             },
             tokens: {
                 wrappedNativeAsset:
-                    '0x88daBb4E1eB9999d05e04bcd704C17442FA88D72',
+                    '0x88dabb4e1eb9999d05e04bcd704c17442fa88d72',
             },
         },
         urls: {
