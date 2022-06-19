@@ -44,6 +44,9 @@ export async function getOnChainBalances(
             console.error(`Unknown pool type: ${pool.poolType} ${pool.id}`);
             return;
         }
+        if (!pool.tokensList.length) {
+            return;
+        }
 
         subgraphPools.push(pool);
 
