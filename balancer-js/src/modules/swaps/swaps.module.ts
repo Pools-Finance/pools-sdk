@@ -14,7 +14,6 @@ import {
     queryBatchSwapWithSor,
     getSorSwapInfo,
 } from './queryBatchSwap';
-import { balancerVault } from '@/lib/constants/config';
 import { getLimitsForSlippage } from './helpers';
 import vaultAbi from '@/lib/abi/Vault.json';
 import { BalancerSdkConfig } from '@/types';
@@ -28,8 +27,10 @@ import { Interface } from '@ethersproject/abi';
 
 export class Swaps {
     readonly sor: SOR;
+    readonly vaultAddress: string;
 
-    constructor(sorOrConfig: SOR | BalancerSdkConfig) {
+    constructor(sorOrConfig: SOR | BalancerSdkConfig, vaultAddress: string) {
+        this.vaultAddress = vaultAddress;
         if (sorOrConfig instanceof SOR) {
             this.sor = sorOrConfig;
         } else {
@@ -140,7 +141,7 @@ export class Swaps {
     ): Promise<string[]> {
         // TO DO - Pull in a ContractsService and use this to pass Vault to queryBatchSwap.
         const vaultContract = new Contract(
-            balancerVault,
+            this.vaultAddress,
             vaultAbi,
             this.sor.provider
         );
@@ -168,7 +169,7 @@ export class Swaps {
     ): Promise<QueryWithSorOutput> {
         // TO DO - Pull in a ContractsService and use this to pass Vault to queryBatchSwap.
         const vaultContract = new Contract(
-            balancerVault,
+            this.vaultAddress,
             vaultAbi,
             this.sor.provider
         );
@@ -202,7 +203,7 @@ export class Swaps {
     ): Promise<QuerySimpleFlashSwapResponse> {
         // TO DO - Pull in a ContractsService and use this to pass Vault to queryBatchSwap.
         const vaultContract = new Contract(
-            balancerVault,
+            this.vaultAddress,
             vaultAbi,
             this.sor.provider
         );

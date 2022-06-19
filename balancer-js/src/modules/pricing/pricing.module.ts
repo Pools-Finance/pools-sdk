@@ -8,6 +8,7 @@ import {
 } from '@balancer-labs/sor';
 import { BalancerError, BalancerErrorCode } from '@/balancerErrors';
 import { Pools } from '@/modules/pools/pools.module';
+import { getNetworkConfig } from '@/modules/sdk.helpers';
 
 export class Pricing {
     private readonly swaps: Swaps;
@@ -17,7 +18,10 @@ export class Pricing {
         if (swaps) {
             this.swaps = swaps;
         } else {
-            this.swaps = new Swaps(config);
+            this.swaps = new Swaps(
+                config,
+                getNetworkConfig(config).addresses.contracts.vault
+            );
         }
         this.pools = new Pools(config);
     }
