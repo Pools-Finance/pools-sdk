@@ -18,7 +18,10 @@ export class BalancerSDK {
         public subgraph = new Subgraph(config),
         public pools = new Pools(config)
     ) {
-        this.swaps = new Swaps(this.sor);
+        this.swaps = new Swaps(
+            this.sor,
+            getNetworkConfig(config).addresses.contracts.vault
+        );
         this.relayer = new Relayer(this.swaps);
         this.pricing = new Pricing(config, this.swaps);
     }

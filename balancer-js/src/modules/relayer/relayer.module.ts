@@ -23,6 +23,7 @@ import { SubgraphPoolBase } from '@balancer-labs/sor';
 
 import relayerLibraryAbi from '@/lib/abi/VaultActions.json';
 import aaveWrappingAbi from '@/lib/abi/AaveWrapping.json';
+import { getNetworkConfig } from '@/modules/sdk.helpers';
 
 export * from './types';
 
@@ -35,7 +36,10 @@ export class Relayer {
         if (swapsOrConfig instanceof Swaps) {
             this.swaps = swapsOrConfig;
         } else {
-            this.swaps = new Swaps(swapsOrConfig);
+            this.swaps = new Swaps(
+                swapsOrConfig,
+                getNetworkConfig(swapsOrConfig).addresses.contracts.vault
+            );
         }
     }
 

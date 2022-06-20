@@ -10,6 +10,7 @@ import {
 } from '@/.';
 import { mockPool, mockPoolDataService } from '@/test/lib/mockPool';
 import { SwapType } from './types';
+import { balancerVault } from '@/lib/constants/config';
 
 dotenv.config();
 
@@ -28,7 +29,7 @@ const sdkConfig: BalancerSdkConfig = {
 describe('swaps module', () => {
     context('instantiation', () => {
         it('instantiate via module', async () => {
-            const swaps = new Swaps(sdkConfig);
+            const swaps = new Swaps(sdkConfig, balancerVault);
             await swaps.fetchPools();
             const pools = swaps.getPools();
             expect(pools).to.deep.eq([mockPool]);
