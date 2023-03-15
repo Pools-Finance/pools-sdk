@@ -131,7 +131,7 @@ export const BALANCER_NETWORK_CONFIG: Record<Network, BalancerNetworkConfig> = {
         addresses: {
             contracts: {
                 vault: '0x36c0B53da8ca335a5181aE0817736696FFFf21Cb',
-                multicall: '0x42ad527de7d4e9d9d011ac45b31d8551f8fe9821',
+                multicall: '0x5BA1e12693Dc8F9c48aAD8770482f4739bEeD696',
             },
             tokens: {
                 wrappedNativeAsset:
@@ -140,7 +140,7 @@ export const BALANCER_NETWORK_CONFIG: Record<Network, BalancerNetworkConfig> = {
         },
         urls: {
             subgraph:
-                '',
+                'https://subgraph.web3-infra.network/subgraphs/name/nakama/pools-goerli',
         },
         pools: {},
     },
