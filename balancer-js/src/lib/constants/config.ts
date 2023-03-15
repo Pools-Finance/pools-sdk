@@ -130,17 +130,17 @@ export const BALANCER_NETWORK_CONFIG: Record<Network, BalancerNetworkConfig> = {
         chainId: Network.GÖRLI, //5
         addresses: {
             contracts: {
-                vault: '0x65748E8287Ce4B9E6D83EE853431958851550311',
-                multicall: '0x42ad527de7d4e9d9d011ac45b31d8551f8fe9821',
+                vault: '0x36c0B53da8ca335a5181aE0817736696FFFf21Cb',
+                multicall: '0x5BA1e12693Dc8F9c48aAD8770482f4739bEeD696',
             },
             tokens: {
                 wrappedNativeAsset:
-                    '0x9A1000D492d40bfccbc03f413A48F5B6516Ec0Fd',
+                    '0x16326CD4AEAfd2dD38bbf29979bF188FfB1f569c',
             },
         },
         urls: {
             subgraph:
-                'https://api.thegraph.com/subgraphs/name/balancer-labs/balancer-goerli-v2',
+                'https://subgraph.web3-infra.network/subgraphs/name/nakama/pools-goerli',
         },
         pools: {},
     },
